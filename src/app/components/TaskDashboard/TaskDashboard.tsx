@@ -11,6 +11,7 @@ import { TaskCard } from "../TaskCard/TaskCard";
 import { TaskForm } from "../TaskForm/TaskForm";
 import { FormData } from "../../types/task.types";
 import { SearchBar } from "../SearchBar/SearchBar";
+import EmptyTaskState from "../EmptyTaskState/EmptyTaskState";
 
 export const TaskDashboard: React.FC = () => {
   // State management
@@ -118,17 +119,20 @@ export const TaskDashboard: React.FC = () => {
         </div>
         <div className="p-4 max-w-6xl mx-auto">
           {/* Task Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredAndSortedTasks.map((task) => (
-              <TaskCard
-                key={task.id}
-                task={task}
-                onEdit={handleEdit}
-                onDelete={(taskId) => setDeleteConfirm(taskId)}
-              />
-            ))}
-          </div>
-
+          {filteredAndSortedTasks.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredAndSortedTasks.map((task) => (
+                <TaskCard
+                  key={task.id}
+                  task={task}
+                  onEdit={handleEdit}
+                  onDelete={(taskId) => setDeleteConfirm(taskId)}
+                />
+              ))}
+            </div>
+          ) : (
+            <EmptyTaskState onCreateTask={() => setIsModalOpen(true)} />
+          )}
           {/* Task Form Modal */}
           {isModalOpen && (
             <TaskForm
