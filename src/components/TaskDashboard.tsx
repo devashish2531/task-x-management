@@ -10,6 +10,7 @@ import { Header } from "./Header";
 import { TaskCard } from "./TaskCard/TaskCard";
 import { TaskForm } from "./TaskForm/TaskForm";
 import { FormData } from "../app/types/task.types";
+import { SearchBar } from "./../components/SearchBar/SearchBar";
 
 export const TaskDashboard: React.FC = () => {
   // State management
@@ -20,6 +21,7 @@ export const TaskDashboard: React.FC = () => {
   const [editingTask, setEditingTask] = useState<Task | null>(null);
   const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
   const [deleteConfirm, setDeleteConfirm] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   // Load tasks from localStorage on mount
   useEffect(() => {
@@ -84,7 +86,8 @@ export const TaskDashboard: React.FC = () => {
   const filteredAndSortedTasks = TaskService.filterAndSortTasks(
     tasks,
     filterStatus,
-    sortOrder
+    sortOrder,
+    searchQuery
   );
 
   return (
@@ -93,15 +96,27 @@ export const TaskDashboard: React.FC = () => {
         {/* Header Component */}
         <Header onNewTask={() => setIsModalOpen(true)} />
 
-        <div className="p-6 max-w-6xl mx-auto">
+        <div className="p-4 max-w-6xl mx-auto">
           {/* Filters Component */}
-          <TaskFilters
-            filterStatus={filterStatus}
-            sortOrder={sortOrder}
-            onFilterChange={setFilterStatus}
-            onSortChange={handleSortChange}
-          />
+          <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+            <div className="flex-1">
+              <SearchBar
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+              />
+            </div>
 
+            <div className="flex-1 md:flex md:justify-end">
+              <TaskFilters
+                filterStatus={filterStatus}
+                sortOrder={sortOrder}
+                onFilterChange={setFilterStatus}
+                onSortChange={handleSortChange}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="p-4 max-w-6xl mx-auto">
           {/* Task Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredAndSortedTasks.map((task) => (

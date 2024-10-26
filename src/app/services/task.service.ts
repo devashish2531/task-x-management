@@ -4,10 +4,19 @@ export const TaskService = {
   filterAndSortTasks: (
     tasks: Task[],
     filterStatus: "all" | TaskStatus,
-    sortOrder: SortOrder
+    sortOrder: SortOrder,
+    searchQuery: string
   ): Task[] => {
     return tasks
-      .filter((task) => filterStatus === "all" || task.status === filterStatus)
+      .filter((task) => {
+        const matchesStatus =
+          filterStatus === "all" || task.status === filterStatus;
+        const matchesSearch =
+          searchQuery === "" ||
+          task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          task.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesStatus && matchesSearch;
+      })
       .sort((a, b) => {
         const dateA = new Date(a.dueDate);
         const dateB = new Date(b.dueDate);
