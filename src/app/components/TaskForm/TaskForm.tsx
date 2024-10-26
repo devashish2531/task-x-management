@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
-import { FormData } from "../../app//types/task.types";
-import { TASK_STATUSES } from "../../app/constants/task.constants";
+import { FormData } from "../../types/task.types";
+import { TASK_STATUSES } from "../../constants/task.constants";
 
 interface TaskFormProps {
   formData: FormData;

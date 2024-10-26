@@ -4,13 +4,13 @@ import { LocalStorageService } from "@/app/services/localStorage.service";
 import { TaskService } from "@/app/services/task.service";
 import { Task, TaskStatus } from "@/app/types/task.types";
 import { useState, useEffect } from "react";
-import { DeleteConfirmation } from "./DeleteConfirmation/DeleteConfirmation";
-import { TaskFilters } from "./Filters/TaskFilters";
-import { Header } from "./Header";
-import { TaskCard } from "./TaskCard/TaskCard";
-import { TaskForm } from "./TaskForm/TaskForm";
-import { FormData } from "../app/types/task.types";
-import { SearchBar } from "./../components/SearchBar/SearchBar";
+import { DeleteConfirmation } from "../DeleteConfirmation/DeleteConfirmation";
+import { TaskFilters } from "../Filters/TaskFilters";
+import { Header } from "../Header/Header";
+import { TaskCard } from "../TaskCard/TaskCard";
+import { TaskForm } from "../TaskForm/TaskForm";
+import { FormData } from "../../types/task.types";
+import { SearchBar } from "../SearchBar/SearchBar";
 
 export const TaskDashboard: React.FC = () => {
   // State management
