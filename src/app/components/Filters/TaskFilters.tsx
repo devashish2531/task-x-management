@@ -14,7 +14,7 @@ export const TaskFilters: React.FC<TaskFiltersProps> = ({
   onFilterChange,
   onSortChange,
 }) => (
-  <div className="flex flex-wrap gap-4 mb-6">
+  <div className="flex flex-wrap gap-4">
     <select
       value={filterStatus}
       onChange={(e) => onFilterChange(e.target.value as "all" | TaskStatus)}
