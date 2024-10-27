@@ -4,7 +4,13 @@ https://task-x-management.vercel.app/
 
 Task X Management is a responsive task management app built with Next.js and Tailwind CSS, featuring a minimalistic design that allows users to efficiently manage tasks with features like status filtering, date sorting, and a robust search mechanism.
 
+
+
 ## Features
+
+### Video Demo
+[![Watch the video](https://res.cloudinary.com/devashish/image/upload/v1730048020/Github/task-x-management/yt-thumbnail_gny2lg.png )](https://www.youtube.com/watch?v=u2JWl0xbSRI) 
+
 
 ### Landing Page
 ![alt text](https://res.cloudinary.com/devashish/image/upload/v1730046751/Github/task-x-management/desktop-1_aieilr.png)
