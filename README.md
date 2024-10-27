@@ -1,6 +1,38 @@
+# Task X Management
+
+https://task-x-management.vercel.app/
+
+Task X Management is a responsive task management app built with Next.js and Tailwind CSS, featuring a minimalistic design that allows users to efficiently manage tasks with features like status filtering, date sorting, and a robust search mechanism.
+
+## Features
+
+### Landing Page
+![alt text](https://res.cloudinary.com/devashish/image/upload/v1730046751/Github/task-x-management/desktop-1_aieilr.png)
+
+- **Task Card Management**: Easily add, edit, and delete tasks using a reactive form interface.
+- **Filter by Status**: View tasks by status, such as "In Progress," "Completed," or "Pending."
+- **Sort by Date**: Organize tasks by their due date or creation date to stay on top of deadlines.
+- **Search Mechanism**: Quickly locate tasks with a built-in search bar.
+- **Minimalistic UI Design**: Clean and intuitive interface that enhances user focus and accessibility.
+- **Responsive Design**: Fully optimized for both desktop and mobile devices for seamless task management on the go.
+
+
+### Task Details Form Edit/Create
+![alt text](https://res.cloudinary.com/devashish/image/upload/v1730047279/Github/task-x-management/desktop-3_ynorvg.png)
+
+- **Detailed Task View**: View all task details, including description, priority, and due date.
+- **Modify Details**: Modify task status/title/description/due date directly from the details page.
+
+
+## Responsive and clean UI
+![alt text](https://res.cloudinary.com/devashish/image/upload/v1730046751/Github/task-x-management/mobile-1_m4zv1u.png)
+![alt text](https://res.cloudinary.com/devashish/image/upload/v1730046751/Github/task-x-management/desktop-2_uk5e6x.png)
+
+
+## Installation / Local Setup
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
 First, run the development server:
 
@@ -16,21 +48,3 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
